@@ -1,0 +1,37 @@
+[
+    {
+        "nombre": "Juan",
+        "apellido": "Deras",
+        "edad": 19,
+        "matricula": "23170072",
+        "promedio": 8
+    },
+    {
+        "nombre": "Emilio",
+        "apellido": "Olvera",
+        "edad": 21,
+        "matricula": "22150081",
+        "promedio": 9
+    },
+    {
+        "nombre": "Esteban Oz",
+        "apellido": "Cordova",
+        "edad": 19,
+        "matricula": "23170063",
+        "promedio": 9.0
+    },
+    {
+        "nombre": "Jesus",
+        "apellido": "De la Rosa",
+        "edad": 19,
+        "matricula": "23171010",
+        "promedio": 9.0
+    },
+    {
+        "nombre": "Brandon",
+        "apellido": "Arreola",
+        "edad": 23,
+        "matricula": "23170097",
+        "promedio": 8.0
+    }
+]

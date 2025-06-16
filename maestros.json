@@ -1,0 +1,30 @@
+[
+    {
+        "nombre": "Ramiro",
+        "apellido": "Esquivel",
+        "edad": 40,
+        "matricula": "1",
+        "especialidad": "Android"
+    },
+    {
+        "nombre": "Jesus",
+        "apellido": "Burciaga",
+        "edad": 40,
+        "matricula": "2",
+        "especialidad": "iOS"
+    },
+    {
+        "nombre": "Juan",
+        "apellido": "Perez",
+        "edad": 20,
+        "matricula": "23170120",
+        "especialidad": "Web"
+    },
+    {
+        "nombre": "David",
+        "apellido": "Del Toro",
+        "edad": 40,
+        "matricula": "3",
+        "especialidad": "IOT"
+    }
+]

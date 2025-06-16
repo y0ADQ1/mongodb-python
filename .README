@@ -1,0 +1,7 @@
+tenemos que crear una lista de objetos en la clase alumnos
+
+el objeto se va a comportar como un arreglo depende de lo siguiente:
+si no le enviamos las propiedades correctas o si estan vacios los parametros se comportara como un arreglo.
+Mientras que se comportara como un objeto cuando se manden todos los parametros
+
+ir adelantando los ejercicios (cuando terminemos lo de las clases y los objetos, hacer el crud)

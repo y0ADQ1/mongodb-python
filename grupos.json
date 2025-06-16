@@ -1,0 +1,70 @@
+[
+    {
+        "tipo": "grupo",
+        "nombre": "Desarrollo Movil",
+        "maestro": {
+            "tipo": "maestro",
+            "nombre": "Ramiro",
+            "apellido": "Esquivel",
+            "edad": 40,
+            "matricula": "1",
+            "especialidad": "Android"
+        },
+        "alumnos": [
+            {
+                "tipo": "alumno",
+                "nombre": "Juan",
+                "apellido": "Deras",
+                "edad": 19,
+                "matricula": "23170072",
+                "promedio": 8
+            },
+            {
+                "tipo": "alumno",
+                "nombre": "Jesus",
+                "apellido": "De la rosa",
+                "edad": 19,
+                "matricula": "23170119",
+                "promedio": 10
+            },
+            {
+                "tipo": "alumno",
+                "nombre": "Emilio",
+                "apellido": "Olvera",
+                "edad": 21,
+                "matricula": "23170120",
+                "promedio": 9
+            }
+        ]
+    },
+    {
+        "tipo": "grupo",
+        "nombre": "Desarrollo iOS",
+        "maestro": {
+            "tipo": "maestro",
+            "nombre": "Adrian",
+            "apellido": "Burciaga",
+            "edad": 40,
+            "matricula": "2",
+            "especialidad": "iOS"
+        },
+        "alumnos": [
+            {
+                "tipo": "alumno",
+                "nombre": "Aza",
+                "apellido": "Garcia",
+                "edad": 19,
+                "matricula": "23170121",
+                "promedio": 10
+            },
+            {
+                "tipo": "alumno",
+                "nombre": "Saul",
+                "apellido": "Sanchez",
+                "edad": 20,
+                "matricula": "23170122",
+                "promedio": 9.9
+            }
+        ]
+    }
+]

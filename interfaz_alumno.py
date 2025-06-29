@@ -1,9 +1,12 @@
 from crud import CRUD
 from alumno import Alumno
+from mongo_utils import MongoSyncUtils
 
 class InterfazAlumno:
     def __init__(self):
         self.crud = CRUD(Alumno, "alumnos.json")
+        self.offline_file = "alumnos_offline.json"
+        self.alumnos_offline = MongoSyncUtils.cargar_offline(self.offline_file, Alumno)
 
     def menu(self):
         while True:
@@ -12,7 +15,8 @@ class InterfazAlumno:
             print("2. Agregar alumno")
             print("3. Actualizar alumno")
             print("4. Eliminar alumno")
-            print("5. Salir")
+            print("5. Sincronizar datos offline a Mongo")
+            print("6. Salir")
             opcion = input("Seleccione una opción: ").strip()
 
             if opcion == "1":
@@ -24,6 +28,8 @@ class InterfazAlumno:
             elif opcion == "4":
                 self._eliminar_alumno()
             elif opcion == "5":
+                MongoSyncUtils.sincronizar_offline(self.alumnos_offline, "python-mongo", "alumnos", self.offline_file)
+            elif opcion == "6":
                 print("Saliendo del menú de alumnos.")
                 break
             else:
@@ -58,8 +64,20 @@ class InterfazAlumno:
             print("Promedio inválido.")
             return
         nuevo_alumno = Alumno(nombre, apellido, edad, matricula, promedio)
-        if self.crud.crear(nuevo_alumno):
-            print("Alumno añadido correctamente.")
+        
+        #con esto va aintentar guardar en Mongo directo si hay conexion
+        if MongoSyncUtils.guardar_en_mongo_conexion(nuevo_alumno, "python-mongo", "alumnos"):
+            print("Alumno agregado correctamente en Mongo")
+        else: 
+            #si no hay conexion guarda offline
+            self.alumnos_offline.agregar(nuevo_alumno)
+            MongoSyncUtils.guardar_offline(self.alumnos_offline, self.offline_file)
+            print("No hubo conexion. El alumno se guardo offline")
+        self.crud.crear(nuevo_alumno)
+
+
+
+
 
 
 
@@ -128,7 +146,6 @@ class InterfazAlumno:
             return
         self.crud.eliminar(seleccion)
         print("Alumno eliminado correctamente.")
-
 
 
 

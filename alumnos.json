@@ -33,5 +33,26 @@
         "edad": 23,
         "matricula": "23170097",
         "promedio": 8.0
+    },
+    {
+        "nombre": "pepito",
+        "apellido": "contreras",
+        "edad": 20,
+        "matricula": "23170575",
+        "promedio": 9.0
+    },
+    {
+        "nombre": "Santiago",
+        "apellido": "Castillo",
+        "edad": 19,
+        "matricula": "23167788",
+        "promedio": 8.0
+    },
+    {
+        "nombre": "Luz",
+        "apellido": "Originales",
+        "edad": 21,
+        "matricula": "23170071",
+        "promedio": 9.0
     }
 ]

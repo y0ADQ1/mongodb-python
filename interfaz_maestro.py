@@ -1,9 +1,12 @@
 from crud import CRUD
 from maestro import Maestro
+from mongo_utils import MongoSyncUtils
 
 class InterfazMaestro:
     def __init__(self):
         self.crud = CRUD(Maestro, "maestros.json")
+        self.offline_file = "maestros_offline.json"
+        self.maestros_offline = MongoSyncUtils.cargar_offline(self.offline_file, Maestro)
 
     def menu(self):
         while True:
@@ -12,7 +15,8 @@ class InterfazMaestro:
             print("2. Agregar maestro")
             print("3. Actualizar maestro")
             print("4. Eliminar maestro")
-            print("5. Salir")
+            print("5. Sincronizar datos offline a Mongo")
+            print("6. Salir")
             opcion = input("Seleccione una opción: ").strip()
 
             if opcion == "1":
@@ -24,7 +28,9 @@ class InterfazMaestro:
             elif opcion == "4":
                 self._eliminar_maestro()
             elif opcion == "5":
-                print("Saliendo del menú de maestros.")
+                MongoSyncUtils.sincronizar_offline(self.maestros_offline, "python-mongo", "maestros", self.offline_file)
+            elif opcion == "6":
+                print("saliendo del menu de maestros")
                 break
             else:
                 print("Opción inválida. Intenta de nuevo.")
@@ -46,8 +52,18 @@ class InterfazMaestro:
         matricula = input("Matrícula: ").strip()
         especialidad = input("Especialidad: ").strip()
         nuevo_maestro = Maestro(nombre, apellido, edad, matricula, especialidad)
-        if self.crud.crear(nuevo_maestro):
-            print("Maestro añadido correctamente.")
+        
+        if MongoSyncUtils.guardar_en_mongo_conexion(nuevo_maestro, "python-mongo", "maestros"):
+            print("Maestro guardado correctamente en Mongo")
+        else:
+            self.maestros_offline.agregar(nuevo_maestro)
+            MongoSyncUtils.guardar_offline(self.maestros_offline, self.offline_file)
+            print("No hubo conexion a Mongo. El maestro se guardo offline")
+        self.crud.crear(nuevo_maestro)
+
+
+
+
 
     def _actualizar_maestro(self):
         maestros = self.crud.leer_todos()

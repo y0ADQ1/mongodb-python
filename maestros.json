@@ -26,5 +26,54 @@
         "edad": 40,
         "matricula": "3",
         "especialidad": "IOT"
+    },
+    {
+        "nombre": "pancho",
+        "apellido": "gutierrez",
+        "edad": 45,
+        "matricula": "23178282",
+        "especialidad": "web"
+    },
+    {
+        "nombre": "Elena",
+        "apellido": "Perez",
+        "edad": 40,
+        "matricula": "23179999",
+        "especialidad": "EOE"
+    },
+    {
+        "nombre": "Maria",
+        "apellido": "Hernandez",
+        "edad": 41,
+        "matricula": "23189999",
+        "especialidad": "iOS"
+    },
+    {
+        "nombre": "Igmar",
+        "apellido": "Salazar",
+        "edad": 37,
+        "matricula": "23198888",
+        "especialidad": "Ciberseguridad"
+    },
+    {
+        "nombre": "Luis",
+        "apellido": "Gutierrez",
+        "edad": 32,
+        "matricula": "23100099",
+        "especialidad": "Metricas"
+    },
+    {
+        "nombre": "Enrique",
+        "apellido": "Maravilla",
+        "edad": 36,
+        "matricula": "23091010",
+        "especialidad": "UX"
+    },
+    {
+        "nombre": "kike",
+        "apellido": "maravilla",
+        "edad": 37,
+        "matricula": "23110099",
+        "especialidad": "UI"
     }
 ]

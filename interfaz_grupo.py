@@ -61,7 +61,6 @@ class InterfazGrupo:
 
     def agregar_grupo(self):
         nombre = input("Nombre del grupo: ").strip()
-        # Puedes agregar más campos si tu modelo de Grupo los tiene (grado, seccion, etc.)
 
         print("\n--- Asignar maestro al grupo ---")
         self.interfaz_maestro._agregar_maestro()
@@ -75,11 +74,10 @@ class InterfazGrupo:
 
         agregar_mas = input("¿Deseas agregar alumnos? (s/n): ").lower()
         if agregar_mas == "s":
-            print("\n--- Gestionando alumnos para el grupo ---")
-            self.interfaz_alumno._agregar_alumno()
-            if hasattr(self.interfaz_alumno.crud.leer_todos(), 'items') and len(self.interfaz_alumno.crud.leer_todos().items) > 0:
-                alumnos = self.interfaz_alumno.crud.leer_todos()
-                grupo.alumnos = alumnos
+            
+            interfaz_alumno=InterfazAlumno(grupo.alumnos)
+            
+            grupo.alumnos = interfaz_alumno.alumnos
 
         self.grupos.agregar(grupo)
 

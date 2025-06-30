@@ -119,16 +119,3 @@ class MongoSyncUtils:
             print("No hay conexion a Mongo. No se elimino en mongo")
             return False
     
-
-
-    """
-    validacion cuando se quiera agregar, para que no se dupliquen datos
-    @staticmethod
-    def existe_en_mongo(matricula, db_name, collection_name):
-        client = MongoSyncUtils.conectar_mongo()
-        if client:
-            db = client[db_name]
-            coleccion = db[collection_name]
-            return coleccion.find_one({"matricula": matricula}) is not None
-        return False
-    """

@@ -100,8 +100,20 @@ class InterfazMaestro:
             "matricula": nueva_matricula,
             "especialidad": nueva_especialidad
         }
+        matricula_orignal = maestro.matricula
+
+        filtro = {"matricula": matricula_orignal}
+        if MongoSyncUtils.actualizar_en_mongo_conexion(filtro, nuevos_datos, "python-mongo", "maestros"):
+            print("Maestro actualizado en Mongo")
+        else:
+            print("No hubo conexion. Solo se actualizo localmente")
+
         self.crud.actualizar(seleccion, nuevos_datos)
-        print("Maestro modificado correctamente.")
+        print("Maestro actualizado correctamente")
+
+
+
+
 
     def _eliminar_maestro(self):
         maestros = self.crud.leer_todos()
@@ -119,8 +131,18 @@ class InterfazMaestro:
         except ValueError:
             print("Entrada inválida.")
             return
+        
+
+        matricula_original = maestro.matricula
+
+        filtro = {"matricula": matricula_original}
+        if MongoSyncUtils.eliminar_en_mongo_conexion(filtro, "python-mongo", "maestros"):
+            print("Maestro eliminado en Mongo")
+        else:
+            print("No hubo conexion. Solo se elimino localmente")
+
         self.crud.eliminar(seleccion)
-        print("Maestro eliminado correctamente.")
+        print("Maestro eliminado correctamente")
 
 if __name__ == "__main__":
     interfaz = InterfazMaestro()

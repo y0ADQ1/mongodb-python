@@ -65,3 +65,70 @@ class MongoSyncUtils:
         else:
             print("No hay conexion a Mongo, no se guardo en Mongo")
             return False
+        
+
+
+
+    @staticmethod
+    def actualizar_en_mongo_conexion(filtro, nuevos_datos, db_name, collection_name):
+
+        """
+        actualiza un documento en mongo si hay conexion
+        el filtro: dict para buscar el documento unico por ej la matricula
+        y ya con los nuevos datos: dict con los nuevos valores 
+        """
+        client = MongoSyncUtils.conectar_mongo()
+        if client:
+            db = client[db_name]
+            coleccion = db[collection_name]
+
+            try: 
+                resultado = coleccion.update_one(filtro, {"$set": nuevos_datos})
+                if resultado.matched_count:
+                    print("Objeto actualizado en Mongo")
+                    return True
+                else:
+                    print("No se encontro el documento para actualizar")
+                    return False
+            except Exception as e:
+                print(f"Error al actualizar en Mongo{e}")
+        else:
+            print("No hay conexion a Mongo. No se actualizo en Mongo")
+            return False
+
+
+
+    @staticmethod
+    def eliminar_en_mongo_conexion(filtro, db_name, collection_name):
+        client = MongoSyncUtils.conectar_mongo()
+        if client: 
+            db = client[db_name]
+            coleccion = db[collection_name]
+            try: 
+                resultado = coleccion.delete_one(filtro)
+                if resultado.deleted_count:
+                    print("Objeto eliminado en Mongo")
+                    return True
+                else:
+                    print("No se encontro el documento para eliminar")
+                    return False
+            except Exception as e:
+                print(f"Error al eliminar en Mongo{e}")
+                return False
+        else:
+            print("No hay conexion a Mongo. No se elimino en mongo")
+            return False
+    
+
+
+    """
+    validacion cuando se quiera agregar, para que no se dupliquen datos
+    @staticmethod
+    def existe_en_mongo(matricula, db_name, collection_name):
+        client = MongoSyncUtils.conectar_mongo()
+        if client:
+            db = client[db_name]
+            coleccion = db[collection_name]
+            return coleccion.find_one({"matricula": matricula}) is not None
+        return False
+    """

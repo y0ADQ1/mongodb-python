@@ -35,24 +35,59 @@
         "promedio": 8.0
     },
     {
-        "nombre": "pepito",
-        "apellido": "contreras",
-        "edad": 20,
-        "matricula": "23170575",
+        "nombre": "Luz de Abril",
+        "apellido": "Originales",
+        "edad": 21,
+        "matricula": "23170070",
         "promedio": 9.0
     },
     {
-        "nombre": "Santiago",
-        "apellido": "Castillo",
-        "edad": 19,
-        "matricula": "23167788",
-        "promedio": 8.0
+        "nombre": "Gael",
+        "apellido": "Imperial",
+        "edad": 20,
+        "matricula": "23174433",
+        "promedio": 9.0
     },
     {
-        "nombre": "Luz",
-        "apellido": "Originales",
-        "edad": 21,
-        "matricula": "23170071",
+        "nombre": "chuyito",
+        "apellido": "contreras",
+        "edad": 19,
+        "matricula": "23170105",
+        "promedio": 9.0
+    },
+    {
+        "nombre": "Marcelo",
+        "apellido": "Piedra negra",
+        "edad": 20,
+        "matricula": "23171716",
+        "promedio": 9.0
+    },
+    {
+        "nombre": "Saul",
+        "apellido": "Sanchez",
+        "edad": 20,
+        "matricula": "23179787",
+        "promedio": 9.0
+    },
+    {
+        "nombre": "Chalino",
+        "apellido": "sanchez",
+        "edad": 20,
+        "matricula": "2317163452",
+        "promedio": 9.0
+    },
+    {
+        "nombre": "Jorge",
+        "apellido": "Ibarra",
+        "edad": 20,
+        "matricula": "23809140",
+        "promedio": 9.0
+    },
+    {
+        "nombre": "Azael",
+        "apellido": "Candela",
+        "edad": 19,
+        "matricula": "23174032",
         "promedio": 9.0
     }
 ]

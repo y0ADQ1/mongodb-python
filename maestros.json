@@ -70,10 +70,52 @@
         "especialidad": "UX"
     },
     {
-        "nombre": "kike",
-        "apellido": "maravilla",
-        "edad": 37,
-        "matricula": "23110099",
-        "especialidad": "UI"
+        "nombre": "Israel",
+        "apellido": "Salazar",
+        "edad": 27,
+        "matricula": "23109060",
+        "especialidad": "BD"
+    },
+    {
+        "nombre": "Daniel",
+        "apellido": "Rosales",
+        "edad": 39,
+        "matricula": "23408090",
+        "especialidad": "Redes"
+    },
+    {
+        "nombre": "Marquitos",
+        "apellido": "toys",
+        "edad": 33,
+        "matricula": "23405060",
+        "especialidad": "Redes"
+    },
+    {
+        "nombre": "David",
+        "apellido": "Del Toro",
+        "edad": 40,
+        "matricula": "23704080",
+        "especialidad": "IOT"
+    },
+    {
+        "nombre": "Laura",
+        "apellido": "Casta\u00f1eda",
+        "edad": 50,
+        "matricula": "23434350",
+        "especialidad": "Literatura"
+    },
+    {
+        "nombre": "Garay",
+        "apellido": "Espinoza",
+        "edad": 40,
+        "matricula": "24455456",
+        "especialidad": "POO"
+    },
+    {
+        "nombre": "Adrian",
+        "apellido": "Burciaga",
+        "edad": 40,
+        "matricula": "27897678",
+        "especialidad": "Estructura de datos"
     }
 ]

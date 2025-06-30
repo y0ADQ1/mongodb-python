@@ -122,8 +122,19 @@ class InterfazAlumno:
             "matricula": nueva_matricula,
             "promedio": nuevo_promedio
         }
+
+        #actualiza en mongo si hay conexion
+        matricula_original = alumno.matricula
+
+        filtro = {"matricula": matricula_original}
+        if MongoSyncUtils.actualizar_en_mongo_conexion(filtro, nuevos_datos, "python-mongo", "alumnos"):
+            print("Alumno actualizado en Mongo")
+        else:
+            print("No hubo conexion. Solo se actualizo localmente")
+
+        #actualiza localmente
         self.crud.actualizar(seleccion, nuevos_datos)
-        print("Alumno modificado correctamente.")
+        print("Alumno modificado correctamente")
 
 
 
@@ -144,8 +155,18 @@ class InterfazAlumno:
         except ValueError:
             print("Entrada inválida.")
             return
+        
+        #elimina en mongo si hay conexion
+        matricula_original = alumno.matricula
+
+        filtro = {"matricula": matricula_original}
+        if MongoSyncUtils.eliminar_en_mongo_conexion(filtro, "python-mongo", "alumnos"):
+            print("Alumno eliminado en Mongo")
+        else:
+            print("No hubo conexion. Solo se elimino localmente")
+
         self.crud.eliminar(seleccion)
-        print("Alumno eliminado correctamente.")
+        print("Alumno eliminado correctamente")
 
 
 

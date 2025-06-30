@@ -1,1 +1,9 @@
-[]
+[
+    {
+        "nombre": "Azael",
+        "apellido": "Candela",
+        "edad": 19,
+        "matricula": "23174032",
+        "promedio": 9.0
+    }
+]

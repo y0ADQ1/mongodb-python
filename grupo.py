@@ -17,10 +17,10 @@ class Grupo(Arreglo):
             self.alumnos = Alumno()
             self.es_arreglo = False
 
-    def to_json(self):
-        #guarda el grupo o arreglo de grupos en el archivo json
-        with open("grupos.json", 'w') as file:      
-            json.dump(self.to_dict(), file, indent=4)
+    def to_json(self, archivo):
+        import json
+        with open(archivo, "w", encoding="utf-8") as f:
+            json.dump([item.to_dict() for item in self.items], f, indent=4, ensure_ascii=False)
 
     def read_json(self):
         #aqui leo el archivo jason y convierto los objetos desde el diccionario/lista
